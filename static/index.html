@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <title>SSH Client</title>
+    <link
+      rel="stylesheet"
+      href="public/xterm/dist/xterm.css"
+    />  
+    <link
+      rel="stylesheet"
+      href="public/bootstrap/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <script src="public/jquery/jquery-1.12.4.min.js"></script> 
+    <script src="public/bootstrap/bootstrap.min.js"></script>
+    <script src="public/xterm/dist/xterm.js"></script>
+    <script src="public/xterm/dist/addons/fit/xterm-addon-fit.js"></script>
+    
+    <script src="public/socket.io/socket.io.min.js"></script>
+    <script src="index.js"></script>
+
+  </head>
+
+  <body>
+    <section id="formsection" class="app-bg h-100">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                    <div class="card card-no-border card-bg">
+                        <div class="row justify-content-center align-items-center g-0">
+                            <div class="col-md-9 d-flex align-items-center">
+                                <div class="card-body p-4 p-lg-5 text-black">
+                                    <form id="ssh-data">
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <span class="h1 logo-font fw-bold  mb-0">Web SSH Client</span>
+                                        </div>
+                                        <div id="alert" class="d-flex align-items-center w-100 hide">
+                                            <div class="alert alert-danger w-100">
+                                               Missing required information.
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <div class="form-group no-mb w-100">
+                                                <input name="hostname" id="hostname" type="text" placeholder="Hostname"  class="form-control form-control-include-icon " >
+                                                
+                                            </div>
+                                        </div>
+    
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <div class="form-group no-mb w-100">            
+                                                <input name="port" id="port" type="number" placeholder="Port"  class="form-control form-control-include-icon " >
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <div class="form-group no-mb w-100">
+                                                <input name="username" id="username" type="text" placeholder="Username"  class="form-control form-control-include-icon " >
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <div class="form-group no-mb w-100">
+                                                <input name="password" id="password" type="password" placeholder="Password"  class="form-control form-control-include-icon " >
+                                                
+                                            </div>
+                                        </div>
+                                        
+    
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            <button type="submit" id="ssh-sumbit" class="btn btn-lg btn-font btn-block btn-outline-light">Connect</button>
+                                        </div>
+      
+                                    </form>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="watermark">
+            <img class="book" src="terminal.png" alt="BOOK.SVG" />
+        </div>
+    </section>
+
+    <section id="xterm" class="app-bg h-100 hide">
+        <span class="h1 fixed-header fw-bold  mb-0">Web SSH Client</span>
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                    <div id="sshalert" class="alert ">
+                    </div>
+                    <div id="sshcard" class="card shadow" style="border-radius: 1rem;">
+                        <div class="h-100 w-100" id="terminal-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="watermark">
+            <img class="book" src="terminal.png" alt="BOOK.SVG" />
+        </div>
+    </section>
+   
+    
+  </body>
+  
+  <footer class="card-footer fixed-bottom"><div><p>
+    Made with ❤ by <a style="color:#fff" href="https://github.com/soumyaprasadrana/soumyaprasadrana">Soumya</a> </p></div></footer>
+
+
+</html>
